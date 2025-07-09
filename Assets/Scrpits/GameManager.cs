@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
         // 코인이 2의 배수일 때마다 미사일 업그레이드
         if(coin %2 ==0)
         {
-            Player player = FindObjectOfType<Player>();
+            Player player = FindFirstObjectByType<Player>();
             if (player != null)
             {
                 player.MissileUp(); // 2개마다 미사일 업그레이드

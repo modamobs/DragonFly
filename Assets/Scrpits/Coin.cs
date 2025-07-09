@@ -17,7 +17,7 @@ public class Coin : MonoBehaviour
     // 코인을 위로 튀기는 함수
     void Jump()
     {
-        // x축은 -1~0, y축은 3~5의 임의의 힘을 가함 (ForceMode2D.Impulse)
+        // x축은 -1~1, y축은 3~5의 임의의 힘을 가함 (ForceMode2D.Impulse)
         rb.AddForce(new Vector2(Random.Range(-1,1),Random.Range(3,6)),ForceMode2D.Impulse);    
     }
 

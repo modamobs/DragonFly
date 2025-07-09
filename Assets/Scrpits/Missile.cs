@@ -9,7 +9,6 @@ public class Missile : MonoBehaviour
     private float moveSpeed = 1f;
 
     // 미사일 데미지
-    [SerializeField]
     public int missileDamege=1;
 
     // 폭발 이펙트 프리팹
@@ -31,7 +30,6 @@ public class Missile : MonoBehaviour
     {
         if (collision.tag == "Enemy")
         {
-            // 이펙트 생성 후 1초 뒤 자동 삭제
             GameObject effect = Instantiate(Expeffect, transform.position, Quaternion.identity);
             Destroy(effect, 1f); // 1초 후 이펙트 삭제
             Destroy(gameObject); // 미사일 삭제

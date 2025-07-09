@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         float horizontalInput = Input.GetAxisRaw("Horizontal");
+        
         Vector3 moveTo= new Vector3(horizontalInput, 0,0);
         transform.position += moveTo*moveSpeed*Time.deltaTime; // 좌우 이동
         
@@ -55,11 +56,13 @@ public class Player : MonoBehaviour
     // 미사일 발사 함수
     void Shoot()
     {
-        if(Time.time - lastshotTime > shootInverval)
+        if (Time.time - lastshotTime > shootInverval)
         {
+
             Instantiate(missilePrefab[missIndex], spPostion.position, Quaternion.identity); // 미사일 생성
             lastshotTime = Time.time; // 마지막 발사 시간 갱신
         }
+
     }
 
     // 미사일 업그레이드 함수

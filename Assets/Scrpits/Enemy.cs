@@ -30,19 +30,19 @@ public class Enemy : MonoBehaviour
     }
 
     // 적이 피격 시 깜빡임 효과
-    public void Flash()
-    {
-        StopAllCoroutines(); // 기존 코루틴 중지
-        StartCoroutine(FlashRoutine());
-    }
+    // public void Flash()
+    // {
+    //     StopAllCoroutines(); // 기존 코루틴 중지
+    //     StartCoroutine(FlashRoutine());
+    // }
 
-    // 피격 시 색상 변경 코루틴
-    private IEnumerator FlashRoutine()
-    {
-        spriteRenderer.color = flashColor;
-        yield return new WaitForSeconds(flashDuration);
-        spriteRenderer.color = originalColor;
-    }
+    // // 피격 시 색상 변경 코루틴
+    // private IEnumerator FlashRoutine()
+    // {
+    //     spriteRenderer.color = flashColor;
+    //     yield return new WaitForSeconds(flashDuration);
+    //     spriteRenderer.color = originalColor;
+    // }
 
     // 이동 속도 설정
     public void SetMoveSpeed(float moveSpeed)
@@ -86,7 +86,7 @@ public class Enemy : MonoBehaviour
     {
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.color = Color.red;
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(flashDuration);
         spriteRenderer.color = Color.white;
     }
 
